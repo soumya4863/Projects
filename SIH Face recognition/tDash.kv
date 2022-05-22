@@ -1,0 +1,60 @@
+MDScreen:
+    name: "tDash"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDLabel:
+            text:"Dashboard"
+            pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            halign: "center"
+            font_size: "40sp"
+            theme_text_color: "Custom"
+            text_color: 105/255, 105/255, 105/255, 1
+    MDFloatLayout:
+        MDRectangleFlatIconButton:
+            icon: "account-clock"
+            icon_color: 0, 0, 0, 0.9
+            font_size: "16sp"
+            text:"[b]Take Attendance[/b]\n[size=12sp]Press here to mark attendance[/size]"
+            size_hint: 1.0, 0.11
+            pos_hint: {"center_x": 0.5, "center_y": 0.73}
+            text_color: 0, 0, 0, 0.9
+            line_color: 105/255, 105/255, 105/255, 0.5
+            on_release:
+                root.manager.current = 'attendance'
+                root.manager.transition.direction = "left"
+        MDRectangleFlatIconButton:
+            icon: "file-search"
+            icon_color: 0, 0, 0, 0.9
+            font_size: "16sp"
+            text:"[b]View Attendance[/b]\n[size=12sp]Press here to view student attendance[/size]"
+            size_hint: 1.0, 0.11
+            pos_hint: {"center_x": 0.5, "center_y": 0.62}
+            text_color: 0, 0, 0, 0.9
+            line_color: 105/255, 105/255, 105/255, 0.5
+            on_press:
+                root.manager.current = 'attendance_1'
+                root.manager.transition.direction = "left"
+        MDRectangleFlatIconButton:
+            icon: "chart-line"
+            icon_color: 0, 0, 0, 0.9
+            font_size: "16sp"
+            text:"[b]Take Report[/b]\n[size=12sp]Press here to visualize attendance[/size]"
+            size_hint: 1.0, 0.11
+            pos_hint: {"center_x": 0.5, "center_y": 0.51}
+            text_color: 0, 0, 0, 0.9
+            line_color: 105/255, 105/255, 105/255, 0.5
+            on_press:
+                root.manager.current = 'report'
+                root.manager.transition.direction = "left"
+        MDRectangleFlatIconButton:
+            icon: "logout"
+            icon_color: 0, 0, 0, 0.9
+            font_size: "16sp"
+            text:"[b]Logout[/b]\n[size=12sp]Press here to login again[/size]"
+            size_hint: 1.0, 0.11
+            pos_hint: {"center_x": 0.5, "center_y": 0.40}
+            text_color: 0, 0, 0, 0.9
+            line_color: 105/255, 105/255, 105/255, 0.5
+            on_press:
+                root.manager.current = 'login'
+                root.manager.transition.direction = "right"

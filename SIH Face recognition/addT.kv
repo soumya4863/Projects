@@ -1,0 +1,78 @@
+MDScreen:
+    name: "addT"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        
+        MDLabel:
+            text: "Add Teacher"
+            pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            halign: "center"
+            font_size: "27sp"
+            theme_text_color: "Custom"
+            text_color: 105/255, 105/255, 105/255, 1
+
+        MDFloatLayout:
+            size_hint: 0.79, 0.08
+            pos_hint: {"center_x": 0.5, "center_y": 0.68}
+            MDLabel:
+                text:"username"
+                font_size: "15sp"
+                pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            TextInput:
+                id: username
+                size_hint_y: 0.75
+                pos_hint: {"center_x": 0.48, "center_y": 0.3}
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2sp"
+                font_size: "17sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": 0.5, "center_y": 0}
+                size_hint_y: 0.03
+                md_bg_color: 120/255, 120/255,120/255, 1
+
+        MDFloatLayout:
+            size_hint: 0.79, 0.08
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            MDLabel:
+                text:"Password"
+                font_size: "15sp"
+                pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            TextInput:
+                id: password
+                size_hint_y: 0.75
+                pos_hint: {"center_x": 0.48, "center_y": 0.3}
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2sp"
+                font_size: "17sp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x": 0.5, "center_y": 0}
+                size_hint_y: 0.03
+                md_bg_color: 120/255, 120/255,120/255, 1
+        MDRaisedButton:
+            text:"Add"
+            background_color: 0, 0, 0, 0
+            size_hint: 0.27, 0.09
+            pos_hint: {"center_x": 0.72, "center_y": .12}
+            font_size : "20sp"
+            on_release: 
+                app.addT(username.text,password.text)
+                username.text= ""
+                password.text= ""
+
+        MDRaisedButton:
+            text:"Back"
+            background_color: 0, 0, 0, 0
+            size_hint: 0.27, 0.09
+            pos_hint: {"center_x": 0.24, "center_y": .12}
+            font_size : "20sp"
+            on_release: 
+                username.text= ""
+                password.text= ""
+                root.manager.current = 'AdDash'
+                root.manager.transition.direction = "right"
+            

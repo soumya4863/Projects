@@ -1,0 +1,89 @@
+MDScreen:
+    name: "login"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDLabel:
+            text: "Login"
+            pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            halign: "center"
+            font_size: "48sp"
+            theme_text_color: "Custom"
+        MDTextButton:
+            text: "Admin | "
+            pos_hint: {"center_x": 0.4, "center_y": 0.8}
+            halign: "center"
+            font_size: "20sp"
+            theme_text_color: "Custom"
+            text_color: 120/255, 120/255, 120/255, 1
+            on_press: 
+                username.text= ""
+                password.text= ""
+                root.manager.current = 'Adlogin'
+                root.manager.transition.direction = "left"
+
+        MDTextButton:
+            text: "Teacher"
+            pos_hint: {"center_x": 0.6, "center_y": 0.8}
+            halign: "center"
+            font_size: "20sp"
+            theme_text_color: "Custom"
+            text_color: 0, 0, 255/255, 1
+            
+        MDFloatLayout:
+            size_hint: 0.79, 0.08
+            pos_hint: {"center_x": 0.5, "center_y": 0.52}
+            MDLabel:
+                text:"Username"
+                font_size: "14sp"
+                pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            TextInput:
+                id: username
+                size_hint_y: 0.75
+                pos_hint: {"center_x": 0.49, "center_y": 0.3}
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2sp"
+                font_size: "17sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": 0.5, "center_y": 0}
+                size_hint_y: 0.03
+                md_bg_color: 120/255, 120/255,120/255, 1
+
+        MDFloatLayout:
+            size_hint: 0.79, 0.08
+            pos_hint: {"center_x": 0.5, "center_y": 0.38}
+            MDLabel:
+                text:"Password"
+                font_size: "14sp"
+                pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            TextInput:
+                id: password
+                size_hint_y: 0.75
+                pos_hint: {"center_x": 0.49, "center_y": 0.3}
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2sp"
+                font_size: "17sp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x": 0.5, "center_y": 0}
+                size_hint_y: 0.03
+                md_bg_color: 120/255, 120/255,120/255, 1
+        MDRaisedButton:
+            text:"Login"
+            background_color: 0, 0, 0, 0
+            size_hint: 0.79, 0.08
+            pos_hint: {"center_x": 0.5, "center_y": .15}
+            on_release: 
+                app.verify_tdata(username.text,password.text)
+                username.text= ""
+                password.text= ""
+            canvas.before:
+                Color:
+                    rgb: 254/255, 0, 48/255, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos :self.pos
+                    radius: [2]

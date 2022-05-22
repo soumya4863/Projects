@@ -1,0 +1,102 @@
+<IconListItem>
+    pos_hint:{"center_x":0.5}
+    halign:"center"
+    background_normal: ''
+    color:"#000000"
+    background_color: 1, 1, 1, 1
+
+MDScreen:
+    name: "report"
+
+    MDFloatLayout:
+        
+        size_hint:1,0.065
+        pos_hint:{"center_y":0.95}
+        MDLabel:
+            text:"View Report"
+            font_size:25
+            color:"#848181"
+            pos_hint:{"center_y":0.5}
+            halign:"center"
+    MDFloatLayout:
+        size_hint:1,0.045
+        pos_hint:{"center_y":0.88}
+        halign:"center"
+        MDGridLayout:
+            cols:3
+            pos_hint:{"center_y":0.5,"center_x":0.48}
+            spacing:10
+            size_hint_x:None
+            size_hint_y: None
+            height: self.minimum_height
+            halign:"center"
+            MDTextButton:
+                text:"Student"
+                color:"#088FF7"
+                
+            MDLabel:
+                text:"|"    
+            MDTextButton:
+                text:"Class"
+                color:"#848181"
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "report2"
+
+    MDFloatLayout:
+        size_hint:.8,.07
+        pos_hint:{"center_x":.55,"center_y":.75}
+        TextInput:
+            id:student_id
+            hint_text:"Id"
+            pos_hint:{"center_x":.5,"center_y":.6}
+            background_color:1,1,1,0
+            foreground_color:rgba(0,0,59,255)
+            cursor_color:rgba(0,0,59,255)
+            font_size:"20sp"
+            multiline:False
+        MDFloatLayout:
+            halign:"center"
+            pos_hint:{"center_x":.45,"center_y":0}
+            size_hint_y:.03
+            md_bg_color:rgba(178,178,178,255)
+
+    MDFloatLayout:
+        size_hint:.8,.07
+        pos_hint:{"center_x":.55,"center_y":.6}
+        
+        Button:
+            id:field
+            text:"Month"
+            pos_hint:{"center_x":.45,"center_y":.6}
+            background_normal:""
+            background_color:1,1,1,0
+            foreground_color:rgba(0,0,59,255)
+            font_size:"20sp"
+            color:"#000000"
+            on_release: app.addMonth(field,app.menu)
+        MDFloatLayout:
+            halign:"center"
+            pos_hint:{"center_x":.45,"center_y":0}
+            size_hint_y:.03
+            md_bg_color:rgba(178,178,178,255)  
+
+    Button:
+        text: "Back"
+        size_hint:None,.075
+        font_size: "20sp"
+        background_normal:""
+        background_color:"#088FF7"
+        pos_hint:{"left":1,"top":0.1,"x":0.1}
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = "tDash"
+    Button:
+        text: "Done"
+        size_hint:None,.075
+        font_size: "20sp"
+        background_normal:""
+        background_color:"#088FF7"
+        pos_hint:{"right":0.9,"top":0.1}
+        on_release:
+            app.addGraph(student_id,field,root.manager)    

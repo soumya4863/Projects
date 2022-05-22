@@ -1,0 +1,28 @@
+MDScreen:
+    name: "pre-splash"
+    MDFloatLayout:
+        md_bg_color: 254/255, 0, 48/255, 1
+        Image:
+            source: "edu.png"
+            size_hint: 0.5, 0.5
+            pos_hint: {"center_x": 0.5, "center_y": 0.55}
+            canvas.before:
+                Color:
+                    rgb: 1, 1, 1, 1
+                
+        MDLabel:
+            text:"Attendance System"
+            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            font_size: "35sp"
+            
+        MDLabel:
+            text:"Attendance System"
+            pos_hint: {"center_x": 0.5, "center_y": 0.15}
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            font_size: "13sp"
+            

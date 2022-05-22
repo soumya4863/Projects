@@ -1,0 +1,78 @@
+MDScreen:
+    name: "AdDash"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDLabel:
+            text: "Dashboard"
+            pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            halign: "center"
+            font_size: "40sp"
+            theme_text_color: "Custom"
+            text_color: 105/255, 105/255, 105/255, 1
+    MDFloatLayout:
+        MDRectangleFlatIconButton:
+            icon: "file-search"
+            icon_color: 0, 0, 0, 0.9
+            font_size: "16sp"
+            text: "[b]View Students[/b]\n[size=12sp]Press here to view students record[/size]"
+            size_hint: 1.0, 0.11
+            pos_hint: {"center_x": 0.5, "center_y": 0.73}
+            text_color: 0, 0, 0, 0.9
+            line_color: 105/255, 105/255, 105/255, 0.5
+        MDRectangleFlatIconButton:
+            icon: "file-search"
+            icon_color: 0, 0, 0, 0.9
+            font_size: "16sp"
+            text: "[b]View Teachers[/b]\n[size=12sp]Press here to view teacher records[/size]"
+            size_hint: 1.0, 0.11
+            pos_hint: {"center_x": 0.5, "center_y": 0.62}
+            text_color: 0, 0, 0, 0.9
+            line_color: 105/255, 105/255, 105/255, 0.5
+        MDRectangleFlatIconButton:
+            icon: "plus-thick"
+            icon_color: 0, 0, 0, 0.9
+            font_size: "16sp"
+            text: "[b]Add Teacher[/b]\n[size=12sp]Press here to add a new user[/size]"
+            size_hint: 1.0, 0.11
+            pos_hint: {"center_x": 0.5, "center_y": 0.51}
+            text_color: 0, 0, 0, 0.9
+            line_color: 105/255, 105/255, 105/255, 0.5
+            on_press:
+                root.manager.current = 'addT'
+                root.manager.transition.direction = "left"
+        MDRectangleFlatIconButton:
+            icon: "plus-thick"
+            icon_color: 0, 0, 0, 0.9
+            font_size: "16sp"
+            text: "[b]Add Student[/b]\n[size=12sp]Press here to add a new student record[/size]"
+            size_hint: 1.0, 0.11
+            pos_hint: {"center_x": 0.5, "center_y": 0.40}
+            text_color: 0, 0, 0, 0.9
+            line_color: 105/255, 105/255, 105/255, 0.5
+            on_press:
+                root.manager.current = 'addS'
+                root.manager.transition.direction = "left"
+        MDRectangleFlatIconButton:
+            icon: "chart-line"
+            icon_color: 0, 0, 0, 0.9
+            font_size: "16sp"
+            text: "[b]View Report[/b]\n[size=12sp]Press here to view attendance report[/size]"
+            size_hint: 1.0, 0.11
+            pos_hint: {"center_x": 0.5, "center_y": 0.29}
+            text_color: 0, 0, 0, 0.9
+            line_color: 105/255, 105/255, 105/255, 0.5
+            on_press:
+                root.manager.current = 'report'
+                root.manager.transition.direction = "left"
+        MDRectangleFlatIconButton:
+            icon: "logout"
+            icon_color: 0, 0, 0, 0.9
+            font_size: "16sp"
+            text: "[b]Log Out[/b]\n[size=12sp]Press here to go back[/size]"
+            size_hint: 1.0, 0.11
+            pos_hint: {"center_x": 0.5, "center_y": 0.18}
+            text_color: 0, 0, 0, 0.9
+            line_color: 105/255, 105/255, 105/255, 0.5
+            on_press:
+                root.manager.current = 'Adlogin'
+                root.manager.transition.direction = "right"

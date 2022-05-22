@@ -1,0 +1,157 @@
+MDScreen:
+    name: "addS"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        
+        MDLabel:
+            text: "Add Student"
+            pos_hint: {"center_x": 0.5, "center_y": 0.92}
+            halign: "center"
+            font_size: "27sp"
+            theme_text_color: "Custom"
+            text_color: 105/255, 105/255, 105/255, 1
+
+        MDFloatLayout:
+            size_hint: 0.79, 0.08
+            pos_hint: {"center_x": 0.5, "center_y": 0.82}
+            MDLabel:
+                text:"Name"
+                font_size: "15sp"
+                pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            TextInput:
+                id: name
+                size_hint_y: 0.75
+                pos_hint: {"center_x": 0.48, "center_y": 0.3}
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2sp"
+                font_size: "17sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": 0.5, "center_y": 0}
+                size_hint_y: 0.03
+                md_bg_color: 120/255, 120/255,120/255, 1
+        MDFloatLayout:
+            size_hint: 0.79, 0.08
+            pos_hint: {"center_x": 0.5, "center_y": 0.72}
+            MDLabel:
+                text:"Roll Number"
+                font_size: "15sp"
+                pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            TextInput:
+                id: rollno
+                size_hint_y: 0.75
+                pos_hint: {"center_x": 0.48, "center_y": 0.3}
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2sp"
+                font_size: "17sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": 0.5, "center_y": 0}
+                size_hint_y: 0.03
+                md_bg_color: 120/255, 120/255,120/255, 1
+
+        MDFloatLayout:
+            size_hint: 0.79, 0.08
+            pos_hint: {"center_x": 0.5, "center_y": 0.62}
+            MDLabel:
+                text:"Class"
+                font_size: "15sp"
+                pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            TextInput:
+                id: class1
+                size_hint_y: 0.75
+                pos_hint: {"center_x": 0.48, "center_y": 0.3}
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2sp"
+                font_size: "17sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": 0.5, "center_y": 0}
+                size_hint_y: 0.03
+                md_bg_color: 120/255, 120/255,120/255, 1
+
+        MDFloatLayout:
+            size_hint: 0.79, 0.08
+            pos_hint: {"center_x": 0.5, "center_y": 0.52}
+            MDLabel:
+                text:"Grade"
+                font_size: "15sp"
+                pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            TextInput:
+                id: grade
+                size_hint_y: 0.75
+                pos_hint: {"center_x": 0.48, "center_y": 0.3}
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2sp"
+                font_size: "17sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": 0.5, "center_y": 0}
+                size_hint_y: 0.03
+                md_bg_color: 120/255, 120/255,120/255, 1
+        
+        MDFloatLayout:
+            size_hint: 0.79, 0.08
+            pos_hint: {"center_x": 0.5, "center_y": 0.42}
+            MDLabel:
+                text:"Email"
+                font_size: "15sp"
+                pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            TextInput:
+                id: email
+                size_hint_y: 0.75
+                pos_hint: {"center_x": 0.48, "center_y": 0.3}
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2sp"
+                font_size: "17sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": 0.5, "center_y": 0}
+                size_hint_y: 0.03
+                md_bg_color: 120/255, 120/255,120/255, 1
+    
+
+        MDRaisedButton:
+            text:"Upload Image"
+            background_color: 0, 0, 0, 0
+            font_size : "18sp"
+            size_hint: 0.79, 0.08
+            pos_hint: {"center_x": 0.5, "center_y": .3}
+            on_press: process_status.text="Processing......."
+            on_release:app.supload(process_status,name.text,rollno.text)
+        MDRaisedButton:
+            text:"Add"
+            background_color: 0, 0, 0, 0
+            size_hint: 0.27, 0.09
+            pos_hint: {"center_x": 0.72, "center_y": .12}
+            font_size : "20sp"
+            on_release: 
+                app.addS(name.text,rollno.text,class1.text,grade.text,email.text)
+                name.text= ""
+                rollno.text= ""
+                class1.text= ""
+
+        MDRaisedButton:
+            text:"Back"
+            background_color: 0, 0, 0, 0
+            size_hint: 0.27, 0.09
+            pos_hint: {"center_x": 0.24, "center_y": .12}
+            font_size : "20sp"
+            on_release: 
+                name.text= ""
+                rollno.text= ""
+                class1.text= ""
+                root.manager.current = 'AdDash'
+                root.manager.transition.direction = "right"
+        
+        MDLabel:
+            id:process_status
+            text:""
+            font_size: "22sp"
+            size_hint:0.5, 0.15 
+            pos_hint:{"x": 0.27, "top": 0.3}

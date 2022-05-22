@@ -1,0 +1,39 @@
+
+MDScreen:
+    name: "attendance_2"
+
+    MDFloatLayout:
+        
+        size_hint:1,0.15
+        pos_hint:{"center_y":0.97}
+        MDLabel:
+            text:app.attendance_1.ids.Class.text
+            font_size:16
+            color:"#848181"
+            pos_hint:{"center_y":0.4,"center_x":0.6}
+        MDLabel:
+            text:app.attendance_1.ids.course.text
+            font_size:13
+            color:"#848181"
+            pos_hint:{"center_y":0.2,"center_x":0.6}
+        MDLabel:
+            text:app.attendance_1.ids.datePicketBtn.text
+            font_size:13
+            color:"#848181"
+            pos_hint:{"center_y":0,"center_x":0.6}    
+   
+    BoxLayout:
+        id:attendance_box
+        size_hint:1,0.85        
+
+    Button:
+        text: "Back"
+        size_hint:None,.075
+        font_size: "20sp"
+        background_normal:""
+        background_color:"#088FF7"
+        pos_hint:{"right":0.95,"top":0.97}
+        on_release:
+            root.manager.transition.direction="right"
+            root.manager.current="attendance_1"
+   

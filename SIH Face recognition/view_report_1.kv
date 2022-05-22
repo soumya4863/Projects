@@ -1,0 +1,98 @@
+#:import Snackbar kivymd.uix.snackbar.Snackbar
+#:import Window kivy.core.window.Window
+
+MDScreen:
+    name: "view_report_1"
+
+    MDFloatLayout:
+        
+        size_hint:1,0.065
+        pos_hint:{"center_y":0.95}
+        MDLabel:
+            text:"Student Report"
+            font_size:16
+            color:"#848181"
+            pos_hint:{"center_y":0.4,"center_x":0.6}
+    
+    ScrollView:
+        pos_hint:{"center_y":0.65,"center_x":0.5}
+        size_hint:(0.95,0.4)
+        do_scroll_x:True
+        do_scroll_y:False
+        BoxLayout:
+            id:box
+
+    ScrollView: 
+        pos_hint:{"center_y":0.25} 
+        size_hint:(1,0.4)      
+        MDList:
+
+            OneLineAvatarIconListItem:
+                text: "A : English" 
+                on_release: Snackbar( text="English", snackbar_x="10dp", snackbar_y="10dp",size_hint_x=( Window.width - (dp(10) * 2)) / Window.width).open() 
+                IconLeftWidget:
+                    icon: "map-marker-star-outline"
+
+            OneLineAvatarIconListItem:
+                text: "B : Hindi" 
+                on_release:Snackbar( text="Hindi", snackbar_x="10dp", snackbar_y="10dp",size_hint_x=( Window.width - (dp(10) * 2)) / Window.width).open() 
+
+                IconLeftWidget:
+                    icon: "map-marker-star-outline"
+            OneLineAvatarIconListItem:               
+                text:"C : Marathi"
+                on_release : Snackbar( text="Marathi", snackbar_x="10dp", snackbar_y="10dp",size_hint_x=( Window.width - (dp(10) * 2)) / Window.width).open() 
+                IconLeftWidget:
+                    icon: "map-marker-star-outline"
+
+            OneLineAvatarIconListItem:
+                text : "D : Maths"
+                on_release:Snackbar( text="Maths", snackbar_x="10dp", snackbar_y="10dp",size_hint_x=( Window.width - (dp(10) * 2)) / Window.width).open() 
+                IconLeftWidget:
+                    icon: "map-marker-star-outline"
+
+  
+            OneLineAvatarIconListItem:
+                text : "E : EVS"
+                on_release : Snackbar( text="EVS", snackbar_x="10dp", snackbar_y="10dp",size_hint_x=( Window.width - (dp(10) * 2)) / Window.width).open() 
+                IconLeftWidget:
+                    icon: "map-marker-star-outline"
+
+
+            OneLineAvatarIconListItem:
+                text: "F : Social Studies"
+                on_release: Snackbar( text="Social Studies", snackbar_x="10dp", snackbar_y="10dp",size_hint_x=( Window.width - (dp(10) * 2)) / Window.width).open() 
+                IconLeftWidget:
+                    icon: "map-marker-star-outline"              
+                                   
+            OneLineAvatarIconListItem:
+                text:"G : Science"
+                on_release:Snackbar( text="Science", snackbar_x="10dp", snackbar_y="10dp",size_hint_x=( Window.width - (dp(10) * 2)) / Window.width).open()  
+                IconLeftWidget:
+                    icon: "map-marker-star-outline"
+
+            OneLineAvatarIconListItem:
+                text:"H : Sanskrit" 
+                on_release:Snackbar( text="Sanskrit", snackbar_x="10dp", snackbar_y="10dp",size_hint_x=( Window.width - (dp(10) * 2)) / Window.width).open()  
+                IconLeftWidget:
+                    icon: "map-marker-star-outline"             
+                                   
+            OneLineAvatarIconListItem:
+                text:"I : Arts"
+                on_release: Snackbar( text="Arts", snackbar_x="10dp", snackbar_y="10dp",size_hint_x=( Window.width - (dp(10) * 2)) / Window.width).open() 
+                IconLeftWidget:
+                    icon: "map-marker-star-outline"     
+
+            
+
+    Button:
+        text: "Back"
+        size_hint:None,.075
+        font_size: "20sp"
+        background_normal:""
+        background_color:"#088FF7"
+        pos_hint:{"right":0.95,"top":0.97}
+        on_release:
+            root.manager.transition.direction="right"
+            root.manager.current="report"
+   
